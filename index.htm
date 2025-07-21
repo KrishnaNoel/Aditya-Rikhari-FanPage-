@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aditya Rikhari – FanPage!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      color: #fff;
+      background: url('https://wallpapercave.com/wp/wp2549493.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    body.dark::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.65);
+      z-index: -1;
+    }
+
+    body.light {
+      color: #000;
+      background-color: #f0f0f0;
+    }
+body.light {
+  color: #000;
+  background: url('https://wallpapercave.com/wp/wp2549493.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+    header, footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      color: #ffd369;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: #ccc;
+      padding: 15px 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    nav button.active,
+    nav button:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    #content {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+      backdrop-filter: blur(4px);
+    }
+
+    h2 {
+      color: #ffd369;
+    }
+
+    h3 {
+      color: inherit;
+      margin-top: 30px;
+    }
+
+    a {
+      color: #90ee90;
+      text-decoration: none;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #ccc;
+      border-left: 4px solid #ffd369;
+      padding-left: 15px;
+      margin: 10px 0;
+    }
+
+    iframe, video, audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "🎵 ";
+      margin-right: 5px;
+    }
+
+    .theme-toggle {
+      background: #ffd369;
+      color: #000;
+      margin-left: auto;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="dark">
+
+  <header>🎤 Aditya Rikhari – Fan FanPage!</header>
+
+  <nav>
+    <button class="tab active" onclick="loadTab('about')">About</button>
+    <button class="tab" onclick="loadTab('music')">Music & Lyrics</button>
+    <button class="tab" onclick="loadTab('spotify')">Spotify</button>
+    <button class="tab" onclick="loadTab('media')">Media</button>
+    <button class="tab" onclick="loadTab('contact')">Contact</button>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  </nav>
+
+  <main id="content"></main>
+
+  <footer>© 2025 Fan Page • Made with 🎸 and ❤️</footer>
+
+  <script>
+    const content = document.getElementById('content');
+
+    const tabs = {
+      about: `
+        <h2>About Aditya Rikhari</h2>
+      
+<p><strong>Aditya Rikhari</strong> began singing and writing music while in school and college in Dehradun, later moving to Delhi to pursue his passion.</p>
+<p>His debut breakthrough came with his independently-released song <strong>“Faasle”</strong>. Early works like <em>Kya Karein</em> and <em>Tu Rehti Hai</em> helped him gain visibility. His first official music video, <em>Teri Yaad</em>, released in February 2023 under IndieA Records, featured Aditya on camera for the very first time. As he says: “this one is especially special for me as this is my first‑ever music video.”</p>
+<p>Aditya describes his songwriting as driven by intuition: “My process… is very intuitive and based on my instincts… If something clicks for me, I work in that direction and complete the song.” He composes, writes, and sings all his songs himself, giving him the freedom to experiment creatively.</p>
+<p>He stands out through simple, relatable lyrics and heartfelt tunes. “What sets me apart… are my lyrics and tune because they are very simple, relatable and easy to understand…”</p>
+<p>From ~100K monthly listeners at the start, he grew to 2.5–2.8 million listeners within a year. His songs like <em>Faasle</em> and <em>Samjho Na</em> have amassed over tens of millions of streams.</p>
+<p>Fans consistently describe his music as emotional therapy and deeply touching—many say his songs feel like someone is pouring their heart out, and “Teri Yaad is what got me addicted to his voice.”</p>
+
+      `,
+      music: `
+        <h2>🎶 Songs & Lyrics</h2>
+        <h3>Faasle</h3>
+        <blockquote>"Tere aur mere darmiyaan<br>Yeh Faasle kyun hai itna?"</blockquote>
+        <h3>Samjho Na</h3>
+        <blockquote>"Main jo keh na saka<br>Tu samjho na…"</blockquote>
+        <h3>Kol Aa</h3>
+        <blockquote>"Kol aa ve sajna,<br>Dil tenu labhda…"</blockquote>
+        <h3>Teri Yaad</h3>
+        <blockquote>"Teri yaad aati hai, raaton mein…<br>Jaise koi baat adhoori si ho…"</blockquote>
+      `,
+      spotify: `
+        <h2>📊 Spotify Overview</h2>
+        <p><strong>Monthly Listeners:</strong> ~16 million</p>
+        <p><strong>Total Streams:</strong> 1+ billion</p>
+        <ul>
+          <li>Samjho Na: 258M+</li>
+          <li>Faasle: 162M+</li>
+          <li>Jaana Samjho Na: 102M+</li>
+          <li>Paro: 83M+</li>
+        </ul>
+        <iframe src="https://open.spotify.com/embed/artist/3ozYqVCLohfpXIhalkhM8D" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      `,
+      media: `
+        <h2>🎥 Music Videos</h2>
+        <h3>Faasle</h3>
+        <video controls>
+          <source src="Aditya Rikhari - FAASLE.mp4" type="video/mp4">
+        </video>
+        <h3>Samjho Na </h3>
+        <video controls>
+          <source src="Aditya Rikhari - SAMJHO NA ( NASAMAJH ).mp4" type="video/mp4">
+        </video>
+        <h3>Teri Yaad</h3>
+        <video controls>
+          <source src="TERI YAAD - ADITYA RIKHARI (Lyrics).mp4" type="video/mp4">
+        </video>
+      `,
+      contact: `
+        <h2>📲 Connect with Aditya</h2>
+        <ul>
+          <li><a href="https://instagram.com/adityarikhari" target="_blank">Instagram</a></li>
+          <li><a href="https://www.youtube.com/channel/UCf4rdDUfjjbx0UbGaeirODQ" target="_blank">YouTube</a></li>
+          <li><a href="https://open.spotify.com/artist/3ozYqVCLohfpXIhalkhM8D" target="_blank">Spotify</a></li>
+        </ul>
+        <p>This site is made for fans, by fans. ❤️</p>
+      `
+    };
+
+    function loadTab(tabName) {
+      content.innerHTML = tabs[tabName];
+      document.querySelectorAll('nav button.tab').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`nav button[onclick="loadTab('${tabName}')"]`).classList.add('active');
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      document.body.classList.toggle('light');
+    }
+
+    // Load default
+    loadTab('about');
+  </script>
+</body>
+</html>
