@@ -1,104 +1,127 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>★~[ Aditya Rikhari :: Official Cyber FanStation 2000 ]~★</title>
+  <title>★~[ Aditya Rikhari :: Cyber Station 2000 ]~★</title>
   <style>
-    /* === Y2K RETRO CORE STYLES === */
+    /* === MIDNIGHT SYNTHWAVE / Y2K PALETTE === */
     :root {
-      --bg-color: #0d0221;
-      --text-color: #00ffcc;
+      --bg-color: #080314;
+      --text-color: #e2f1ff;
       --accent-pink: #ff007f;
-      --accent-cyan: #00f0ff;
-      --accent-yellow: #ffee00;
-      --panel-bg: rgba(15, 5, 29, 0.85);
-      --border-light: #ff77bc;
-      --border-dark: #550044;
+      --accent-cyan: #00f3ff;
+      --accent-purple: #9d00ff;
+      --accent-yellow: #ffe600;
+      --panel-bg: rgba(18, 10, 36, 0.92);
+      --window-header: linear-gradient(90deg, #9d00ff, #ff007f);
+      --border-outer: #00f3ff;
+      --border-inner: #ff007f;
+      --glow-color: rgba(0, 243, 255, 0.4);
+    }
+
+    /* Light Theme - Y2K Metallic Silver & Cyber Neon */
+    body.light {
+      --bg-color: #dbe4ee;
+      --text-color: #12002b;
+      --panel-bg: rgba(255, 255, 255, 0.92);
+      --window-header: linear-gradient(90deg, #0088cc, #e60073);
+      --accent-pink: #e60073;
+      --accent-cyan: #0088cc;
+      --accent-purple: #6a00b8;
+      --accent-yellow: #d4a000;
+      --border-outer: #0088cc;
+      --border-inner: #e60073;
+      --glow-color: rgba(0, 136, 204, 0.25);
     }
 
     * {
       box-sizing: border-box;
     }
 
+    /* Custom Retro Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-color);
+      border-left: 1px solid var(--accent-pink);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent-cyan);
+      border: 1px solid #000;
+    }
+
     body {
       margin: 0;
-      font-family: "Courier New", "Trebuchet MS", Monaco, monospace;
+      font-family: "Trebuchet MS", "Courier New", Monaco, monospace;
       background-color: var(--bg-color);
       color: var(--text-color);
       background-image: 
-        radial-gradient(circle at 50% 50%, rgba(255, 0, 127, 0.15), transparent 80%),
-        linear-gradient(0deg, rgba(0, 0, 0, 0.8) 50%, rgba(0, 255, 204, 0.05) 50%);
-      background-size: 100% 100%, 100% 4px; /* Scanline effect */
+        radial-gradient(circle at 50% 20%, rgba(157, 0, 255, 0.25), transparent 70%),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.85) 50%, rgba(0, 243, 255, 0.03) 50%);
+      background-size: 100% 100%, 100% 4px; /* CRT Scanline Effect */
       background-attachment: fixed;
       transition: background 0.3s, color 0.3s;
     }
 
-    /* Light Theme - Cyber Y2K Silver & Neon */
-    body.light {
-      --bg-color: #d8e2dc;
-      --text-color: #2b003b;
-      --panel-bg: rgba(255, 255, 255, 0.85);
-      --accent-pink: #d80068;
-      --accent-cyan: #008080;
-      --accent-yellow: #ffaa00;
-      background-image: 
-        linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
-        linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-      background-size: 20px 20px;
-    }
-
-    /* Ticker / Marquee Banner */
+    /* Ticker Banner */
     .y2k-ticker {
-      background: var(--accent-pink);
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-purple));
       color: #fff;
       font-weight: bold;
-      font-size: 0.9rem;
-      padding: 4px 0;
+      font-size: 0.85rem;
+      padding: 5px 0;
       text-transform: uppercase;
       letter-spacing: 2px;
-      border-bottom: 2px ridge var(--accent-yellow);
-      text-shadow: 1px 1px 0px #000;
+      border-bottom: 2px solid var(--accent-cyan);
+      text-shadow: 1px 1px 2px #000;
     }
 
-    /* Retro Header */
+    /* Header */
     header {
       text-align: center;
-      padding: 25px 10px;
-      background: linear-gradient(180deg, rgba(0,240,255,0.2) 0%, rgba(255,0,127,0.3) 100%);
-      border-bottom: 3px outset var(--accent-cyan);
+      padding: 30px 10px 20px;
+      background: linear-gradient(180deg, rgba(0, 243, 255, 0.15) 0%, rgba(255, 0, 127, 0.25) 100%);
+      border-bottom: 3px ridge var(--accent-cyan);
       text-transform: uppercase;
-      letter-spacing: 3px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.2rem;
-      color: var(--accent-yellow);
-      text-shadow: 3px 3px 0px var(--accent-pink), -2px -2px 0px #000;
+      font-size: 2.5rem;
+      color: #fff;
+      text-shadow: 
+        0 0 5px var(--accent-cyan),
+        0 0 10px var(--accent-cyan),
+        3px 3px 0px var(--accent-pink);
       font-weight: 900;
+      letter-spacing: 4px;
     }
 
     header .subtitle {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: var(--accent-cyan);
-      margin-top: 5px;
+      margin-top: 8px;
+      letter-spacing: 2px;
+      font-weight: bold;
     }
 
-    /* Y2K Navigation Bar */
+    /* Navigation Bar */
     nav {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.85);
       border-bottom: 2px solid var(--accent-pink);
-      padding: 5px;
-      gap: 5px;
+      padding: 8px;
+      gap: 8px;
     }
 
     nav button {
-      background: linear-gradient(180deg, #3a005c 0%, #1a002c 100%);
-      border: 2px outset var(--border-light);
+      background: linear-gradient(180deg, #2b004a 0%, #0d001a 100%);
+      border: 2px outset var(--accent-cyan);
       color: #fff;
       padding: 8px 16px;
       cursor: pointer;
@@ -107,7 +130,7 @@
       font-size: 0.85rem;
       text-transform: uppercase;
       box-shadow: 2px 2px 0px #000;
-      transition: all 0.1s ease;
+      transition: all 0.15s ease;
     }
 
     nav button.active,
@@ -115,8 +138,7 @@
       background: var(--accent-cyan);
       color: #000;
       border-style: inset;
-      box-shadow: none;
-      text-shadow: none;
+      box-shadow: 0 0 10px var(--accent-cyan);
     }
 
     nav button.theme-toggle {
@@ -126,31 +148,67 @@
       margin-left: auto;
     }
 
-    /* Main Content Frame */
-    #content {
+    /* Retro OS Window Container */
+    .window-frame {
       max-width: 850px;
       margin: 30px auto;
-      padding: 25px;
       background: var(--panel-bg);
-      border: 3px groove var(--accent-cyan);
-      box-shadow: 0 0 15px rgba(0, 240, 255, 0.3), inset 0 0 15px rgba(255, 0, 127, 0.2);
-      backdrop-filter: blur(5px);
+      border: 2px solid var(--border-outer);
+      box-shadow: 0 0 20px var(--glow-color), inset 0 0 10px rgba(255, 0, 127, 0.2);
+    }
+
+    .window-header {
+      background: var(--window-header);
+      padding: 6px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      font-weight: bold;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--border-inner);
+    }
+
+    .window-controls {
+      display: flex;
+      gap: 4px;
+    }
+
+    .window-btn {
+      width: 14px;
+      height: 14px;
+      background: #ccc;
+      border: 1px outset #fff;
+      display: inline-block;
+      font-size: 9px;
+      line-height: 12px;
+      text-align: center;
+      color: #000;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #content {
+      padding: 25px;
     }
 
     h2 {
       color: var(--accent-yellow);
       border-bottom: 2px dashed var(--accent-pink);
-      padding-bottom: 5px;
+      padding-bottom: 6px;
       text-transform: uppercase;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       text-shadow: 2px 2px 0px #000;
+      margin-top: 0;
     }
 
     h3 {
       color: var(--accent-cyan);
       margin-top: 25px;
       text-transform: uppercase;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
+      letter-spacing: 1px;
     }
 
     a {
@@ -169,18 +227,19 @@
       font-style: italic;
       color: #fff;
       background: rgba(255, 0, 127, 0.15);
-      border-left: 5px solid var(--accent-cyan);
+      border-left: 4px solid var(--accent-cyan);
       border-right: 1px solid var(--accent-cyan);
-      padding: 10px 15px;
+      padding: 12px 16px;
       margin: 15px 0;
       box-shadow: 3px 3px 0px rgba(0,0,0,0.5);
     }
 
-    iframe, video, audio {
+    iframe {
       width: 100%;
       margin-top: 10px;
       border: 2px ridge var(--accent-pink);
       background: #000;
+      box-shadow: 0 0 10px rgba(0,0,0,0.8);
     }
 
     ul {
@@ -189,7 +248,7 @@
     }
 
     ul li {
-      padding: 6px 0;
+      padding: 8px 0;
       border-bottom: 1px dotted rgba(255,255,255,0.2);
     }
 
@@ -198,12 +257,13 @@
       color: var(--accent-yellow);
     }
 
-    /* Cyber Badge List */
+    /* Cyber Badges */
     .badge-container {
       display: flex;
       gap: 10px;
       margin-top: 15px;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .y2k-badge {
@@ -211,15 +271,15 @@
       background: #000;
       color: var(--accent-cyan);
       font-size: 0.75rem;
-      padding: 3px 8px;
+      padding: 4px 8px;
       font-weight: bold;
+      letter-spacing: 1px;
     }
 
-    /* Footer Styles */
     footer {
       text-align: center;
       padding: 20px;
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.95);
       color: #888;
       font-size: 0.8rem;
       border-top: 2px solid var(--accent-pink);
@@ -239,7 +299,7 @@
 
   <header>
     <h1>✨ Aditya Rikhari ✨</h1>
-    <div class="subtitle">[ Ultimate FanStation & Multimedia Archive ]</div>
+    <div class="subtitle">[ Cyber FanStation & Audio Visual Archive ]</div>
   </header>
 
   <nav>
@@ -251,98 +311,117 @@
     <button class="theme-toggle" onclick="toggleTheme()">⚙️ Theme Switch</button>
   </nav>
 
-  <main id="content"></main>
+  <!-- OS Window Container Wrapper -->
+  <main class="window-frame">
+    <div class="window-header">
+      <span id="window-title">C:\ADITYA_RIKHARI\ABOUT.EXE</span>
+      <div class="window-controls">
+        <span class="window-btn">_</span>
+        <span class="window-btn">□</span>
+        <span class="window-btn">X</span>
+      </div>
+    </div>
+    <div id="content"></div>
+  </main>
 
   <footer>
-    <div class="badge-container" style="justify-content: center; margin-bottom: 15px;">
+    <div class="badge-container" style="margin-bottom: 15px;">
       <span class="y2k-badge">HTML 4.01 PASSED</span>
       <span class="y2k-badge">CYBERSPACE APPROVED</span>
       <span class="y2k-badge">MP3 READY</span>
     </div>
     © 2026 Fan Page • Made with 🎸 and ❤️<br>
     Contents / Music courtesy of:
-    <a href="https://www.youtube.com/channel/UCf4rdDUfjjbx0UbGaeirODQ" target="_blank">Aditya Rikhari</a> |  
-    <a href="https://www.youtube.com/channel/UC4pXWqeKDSIWEvlLLTYWmXQ" target="_blank">Musical Waves</a> |  
-    <a href="https://youtube.com/@editsspixel?si=MrlBgmn1SekwP2G0" target="_blank">Pixel Edits</a>
+    <a href="https://www.youtube.com/channel/UCf4rdDUfjjbx0UbGaeirODQ" target="_blank">Aditya Rikhari</a> | 
+    <a href="https://open.spotify.com/artist/3ozYqVCLohfpXIhalkhM8D" target="_blank">Spotify</a>
   </footer>
 
   <script>
-  const content = document.getElementById('content');
+    const content = document.getElementById('content');
+    const windowTitle = document.getElementById('window-title');
 
-  const tabs = {
-    about: `
-      <h2>📜 About Aditya Rikhari</h2>
-      <p><strong>Aditya Rikhari</strong> began singing and writing music while in school and college in Dehradun, later moving to Delhi to pursue his passion.</p>
-      <p>His debut breakthrough came with his independently-released song <strong>“Faasle”</strong>. Early works like <em>Kya Karein</em> and <em>Tu Rehti Hai</em> helped him gain visibility. His first official music video, <em>Teri Yaad</em>, released in February 2023 under IndieA Records, featured Aditya on camera for the very first time.</p>
-      <p>Aditya describes his songwriting as driven by intuition: “My process… is very intuitive and based on my instincts… If something clicks for me, I work in that direction and complete the song.”</p>
-      <p>From ~100K monthly listeners at the start, he grew rapidly to multi-million stream milestones. Hits like <em>Sahiba</em>, <em>Samjho Na</em>, and <em>Paro</em> have accumulated hundreds of millions of streams worldwide.</p>
-    `,
-    music: `
-      <h2>🎶 Songs & Lyrics Archive</h2>
-      <h3>01. Sahiba</h3>
-      <blockquote>"Sahiba tu na meri ho saki..."</blockquote>
-      <h3>02. Samjho Na</h3>
-      <blockquote>"Main jo keh na saka<br>Tu samjho na…"</blockquote>
-      <h3>03. Paro</h3>
-      <blockquote>"Paro mere paas toh aao..."</blockquote>
-      <h3>04. Faasle</h3>
-      <blockquote>"Tere aur mere darmiyaan<br>Yeh Faasle kyun hai itna?"</blockquote>
-      <h3>05. Teri Yaad</h3>
-      <blockquote>"Teri yaad aati hai, raaton mein…<br>Jaise koi baat adhoori si ho…"</blockquote>
-    `,
-    spotify: `
-      <h2>💿 Spotify Cyber Overview</h2>
-      <p><strong>Monthly Listeners:</strong> ~15.5 Million</p>
-      <p><strong>Total Digital Streams:</strong> 2.4+ Billion</p>
-      <h3>TOP TRACKS:</h3>
-      <ul>
-        <li>Sahiba — 760M+ Streams</li>
-        <li>Samjho Na — 420M+ Streams</li>
-        <li>Paro — 250M+ Streams</li>
-        <li>Faasle — 200M+ Streams</li>
-      </ul>
-      <iframe src="https://open.spotify.com/embed/artist/3ozYqVCLohfpXIhalkhM8D" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-    `,
-    media: `
-      <h2>📺 Video Vault (Most Streamed YouTube Tracks)</h2>
-      
-      <h3>01. Sahiba (Official Video)</h3>
-      <iframe style="aspect-ratio: 16/9; width: 100%; border: 2px ridge var(--accent-pink);" src="https://www.youtube.com/embed/S_8qMeeI-H0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    const titles = {
+      about: "C:\\ADITYA_RIKHARI\\ABOUT.EXE",
+      music: "C:\\ADITYA_RIKHARI\\LYRICS_ARCHIVE.TXT",
+      spotify: "C:\\ADITYA_RIKHARI\\AUDIO_STATS.DAT",
+      media: "C:\\ADITYA_RIKHARI\\VIDEO_VAULT.MPG",
+      contact: "C:\\ADITYA_RIKHARI\\CONNECT.NET"
+    };
 
-      <h3>02. Samjho Na (Nasamajh)</h3>
-      <iframe style="aspect-ratio: 16/9; width: 100%; border: 2px ridge var(--accent-pink);" src="https://www.youtube.com/embed/MhXCj8E9CZU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    const tabs = {
+      about: `
+        <h2>📜 About Aditya Rikhari</h2>
+        <p><strong>Aditya Rikhari</strong> began singing and writing music while in school and college in Dehradun, later moving to Delhi to pursue his passion.</p>
+        <p>His debut breakthrough came with his independently-released song <strong>“Faasle”</strong>. Early works like <em>Kya Karein</em> and <em>Tu Rehti Hai</em> helped him gain visibility. His first official music video, <em>Teri Yaad</em>, released in February 2023 under IndieA Records, featured Aditya on camera for the very first time.</p>
+        <p>Aditya describes his songwriting as driven by intuition: “My process… is very intuitive and based on my instincts… If something clicks for me, I work in that direction and complete the song.”</p>
+        <p>From ~100K monthly listeners at the start, he grew rapidly to multi-million stream milestones. Hits like <em>Sahiba</em>, <em>Samjho Na</em>, and <em>Paro</em> have accumulated hundreds of millions of streams worldwide.</p>
+      `,
+      music: `
+        <h2>🎶 Songs & Lyrics Archive</h2>
+        <h3>01. Sahiba</h3>
+        <blockquote>"Sahiba tu na meri ho saki..."</blockquote>
+        <h3>02. Samjho Na</h3>
+        <blockquote>"Main jo keh na saka<br>Tu samjho na…"</blockquote>
+        <h3>03. Paro</h3>
+        <blockquote>"Paro mere paas toh aao..."</blockquote>
+        <h3>04. Faasle</h3>
+        <blockquote>"Tere aur mere darmiyaan<br>Yeh Faasle kyun hai itna?"</blockquote>
+        <h3>05. Teri Yaad</h3>
+        <blockquote>"Teri yaad aati hai, raaton mein…<br>Jaise koi baat adhoori si ho…"</blockquote>
+      `,
+      spotify: `
+        <h2>💿 Spotify Cyber Overview</h2>
+        <p><strong>Monthly Listeners:</strong> ~15.5 Million</p>
+        <p><strong>Total Digital Streams:</strong> 2.4+ Billion</p>
+        <h3>TOP TRACKS:</h3>
+        <ul>
+          <li>Sahiba — 760M+ Streams</li>
+          <li>Samjho Na — 420M+ Streams</li>
+          <li>Paro — 250M+ Streams</li>
+          <li>Faasle — 200M+ Streams</li>
+        </ul>
+        <iframe src="https://open.spotify.com/embed/artist/3ozYqVCLohfpXIhalkhM8D" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      `,
+      media: `
+        <h2>📺 Video Vault (Most Streamed YouTube Tracks)</h2>
+        <h3>01. Sahiba (Official Video)</h3>
+        <iframe style="aspect-ratio: 16/9; width: 100%;" src="https://www.youtube.com/embed/S_8qMeeI-H0" frameborder="0" allowfullscreen></iframe>
 
-      <h3>03. Paaro (Official Video)</h3>
-      <iframe style="aspect-ratio: 16/9; width: 100%; border: 2px ridge var(--accent-pink);" src="https://www.youtube.com/embed/7D5mS3q1W6I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h3>02. Samjho Na (Nasamajh)</h3>
+        <iframe style="aspect-ratio: 16/9; width: 100%;" src="https://www.youtube.com/embed/MhXCj8E9CZU" frameborder="0" allowfullscreen></iframe>
 
-      <h3>04. Faasle (Official Video)</h3>
-      <iframe style="aspect-ratio: 16/9; width: 100%; border: 2px ridge var(--accent-pink);" src="https://www.youtube.com/embed/3v8T-v0M9zU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    `,
-    contact: `
-      <h2>📡 Cyber Connections</h2>
-      <ul>
-        <li><a href="https://instagram.com/adityarikhari" target="_blank">Instagram Profile</a></li>
-        <li><a href="https://www.youtube.com/channel/UCf4rdDUfjjbx0UbGaeirODQ" target="_blank">YouTube Channel</a></li>
-        <li><a href="https://open.spotify.com/artist/3ozYqVCLohfpXIhalkhM8D" target="_blank">Spotify Artist Page</a></li>
-      </ul>
-      <p style="margin-top:20px; font-style:italic;">This fan site is maintained by cyber-fans, for cyber-fans. ❤️</p>
-    `
-  };
+        <h3>03. Paaro (Official Video)</h3>
+        <iframe style="aspect-ratio: 16/9; width: 100%;" src="https://www.youtube.com/embed/7D5mS3q1W6I" frameborder="0" allowfullscreen></iframe>
 
-  function loadTab(tabName) {
-    content.innerHTML = tabs[tabName];
-    document.querySelectorAll('nav button.tab').forEach(btn => btn.classList.remove('active'));
-    const activeBtn = document.querySelector(`nav button[onclick="loadTab('${tabName}')"]`);
-    if (activeBtn) activeBtn.classList.add('active');
-  }
+        <h3>04. Faasle (Official Video)</h3>
+        <iframe style="aspect-ratio: 16/9; width: 100%;" src="https://www.youtube.com/embed/3v8T-v0M9zU" frameborder="0" allowfullscreen></iframe>
+      `,
+      contact: `
+        <h2>📡 Cyber Connections</h2>
+        <ul>
+          <li><a href="https://instagram.com/adityarikhari" target="_blank">Instagram Profile</a></li>
+          <li><a href="https://www.youtube.com/channel/UCf4rdDUfjjbx0UbGaeirODQ" target="_blank">YouTube Channel</a></li>
+          <li><a href="https://open.spotify.com/artist/3ozYqVCLohfpXIhalkhM8D" target="_blank">Spotify Artist Page</a></li>
+        </ul>
+        <p style="margin-top:20px; font-style:italic;">This fan site is maintained by cyber-fans, for cyber-fans. ❤️</p>
+      `
+    };
 
-  function toggleTheme() {
-    document.body.classList.toggle('dark');
-    document.body.classList.toggle('light');
-  }
+    function loadTab(tabName) {
+      content.innerHTML = tabs[tabName];
+      if (titles[tabName]) windowTitle.innerText = titles[tabName];
+      document.querySelectorAll('nav button.tab').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.querySelector(`nav button[onclick="loadTab('${tabName}')"]`);
+      if (activeBtn) activeBtn.classList.add('active');
+    }
 
-  // Load default tab
-  loadTab('about');
-</script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      document.body.classList.toggle('light');
+    }
+
+    // Load default tab
+    loadTab('about');
+  </script>
 </body>
 </html>
