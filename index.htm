@@ -3,104 +3,184 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aditya Rikhari – FanPage!</title>
+  <title>★~[ Aditya Rikhari :: Official Cyber FanStation 2000 ]~★</title>
   <style>
+    /* === Y2K RETRO CORE STYLES === */
+    :root {
+      --bg-color: #0d0221;
+      --text-color: #00ffcc;
+      --accent-pink: #ff007f;
+      --accent-cyan: #00f0ff;
+      --accent-yellow: #ffee00;
+      --panel-bg: rgba(15, 5, 29, 0.85);
+      --border-light: #ff77bc;
+      --border-dark: #550044;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: "Courier New", "Trebuchet MS", Monaco, monospace;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      background-image: 
+        radial-gradient(circle at 50% 50%, rgba(255, 0, 127, 0.15), transparent 80%),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.8) 50%, rgba(0, 255, 204, 0.05) 50%);
+      background-size: 100% 100%, 100% 4px; /* Scanline effect */
+      background-attachment: fixed;
       transition: background 0.3s, color 0.3s;
     }
 
-    body.dark {
-      color: #fff;
-      background: url('https://wallpapercave.com/wp/wp2549493.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
-
-    body.dark::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.65);
-      z-index: -1;
-    }
-
+    /* Light Theme - Cyber Y2K Silver & Neon */
     body.light {
-      color: #000;
-      background-color: #f0f0f0;
+      --bg-color: #d8e2dc;
+      --text-color: #2b003b;
+      --panel-bg: rgba(255, 255, 255, 0.85);
+      --accent-pink: #d80068;
+      --accent-cyan: #008080;
+      --accent-yellow: #ffaa00;
+      background-image: 
+        linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+      background-size: 20px 20px;
     }
-body.light {
-  color: #F5FFFA;
-  background: url('https://wallpapercave.com/wp/wp2549493.jpg') no-repeat center center fixed;
-  background-size: cover;
-}
 
-
-    header, footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.6);
-      color: #ffd369;
-      font-size: 1.4rem;
+    /* Ticker / Marquee Banner */
+    .y2k-ticker {
+      background: var(--accent-pink);
+      color: #fff;
       font-weight: bold;
+      font-size: 0.9rem;
+      padding: 4px 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: 2px ridge var(--accent-yellow);
+      text-shadow: 1px 1px 0px #000;
     }
 
+    /* Retro Header */
+    header {
+      text-align: center;
+      padding: 25px 10px;
+      background: linear-gradient(180deg, rgba(0,240,255,0.2) 0%, rgba(255,0,127,0.3) 100%);
+      border-bottom: 3px outset var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      color: var(--accent-yellow);
+      text-shadow: 3px 3px 0px var(--accent-pink), -2px -2px 0px #000;
+      font-weight: 900;
+    }
+
+    header .subtitle {
+      font-size: 0.85rem;
+      color: var(--accent-cyan);
+      margin-top: 5px;
+    }
+
+    /* Y2K Navigation Bar */
     nav {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.7);
+      border-bottom: 2px solid var(--accent-pink);
+      padding: 5px;
+      gap: 5px;
     }
 
     nav button {
-      background: none;
-      border: none;
-      color: #ccc;
-      padding: 15px 25px;
+      background: linear-gradient(180deg, #3a005c 0%, #1a002c 100%);
+      border: 2px outset var(--border-light);
+      color: #fff;
+      padding: 8px 16px;
       cursor: pointer;
+      font-family: inherit;
       font-weight: bold;
-      transition: background 0.3s;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      box-shadow: 2px 2px 0px #000;
+      transition: all 0.1s ease;
     }
 
     nav button.active,
     nav button:hover {
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
+      background: var(--accent-cyan);
+      color: #000;
+      border-style: inset;
+      box-shadow: none;
+      text-shadow: none;
     }
 
+    nav button.theme-toggle {
+      background: linear-gradient(180deg, var(--accent-yellow) 0%, #ff8800 100%);
+      color: #000;
+      border-color: #fff;
+      margin-left: auto;
+    }
+
+    /* Main Content Frame */
     #content {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-      backdrop-filter: blur(4px);
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 25px;
+      background: var(--panel-bg);
+      border: 3px groove var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.3), inset 0 0 15px rgba(255, 0, 127, 0.2);
+      backdrop-filter: blur(5px);
     }
 
     h2 {
-      color: #ffd369;
+      color: var(--accent-yellow);
+      border-bottom: 2px dashed var(--accent-pink);
+      padding-bottom: 5px;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      text-shadow: 2px 2px 0px #000;
     }
 
     h3 {
-      color: inherit;
-      margin-top: 30px;
+      color: var(--accent-cyan);
+      margin-top: 25px;
+      text-transform: uppercase;
+      font-size: 1.1rem;
     }
 
     a {
-      color: #90ee90;
+      color: var(--accent-yellow);
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    a:hover {
+      background-color: var(--accent-pink);
+      color: #fff;
       text-decoration: none;
     }
 
     blockquote {
       font-style: italic;
-      color: #ccc;
-      border-left: 4px solid #ffd369;
-      padding-left: 15px;
-      margin: 10px 0;
+      color: #fff;
+      background: rgba(255, 0, 127, 0.15);
+      border-left: 5px solid var(--accent-cyan);
+      border-right: 1px solid var(--accent-cyan);
+      padding: 10px 15px;
+      margin: 15px 0;
+      box-shadow: 3px 3px 0px rgba(0,0,0,0.5);
     }
 
     iframe, video, audio {
       width: 100%;
       margin-top: 10px;
+      border: 2px ridge var(--accent-pink);
+      background: #000;
     }
 
     ul {
@@ -108,107 +188,145 @@ body.light {
       padding-left: 0;
     }
 
-    ul li::before {
-      content: "🎵 ";
-      margin-right: 5px;
+    ul li {
+      padding: 6px 0;
+      border-bottom: 1px dotted rgba(255,255,255,0.2);
     }
 
-    .theme-toggle {
-      background: #ffd369;
-      color: #000;
-      margin-left: auto;
+    ul li::before {
+      content: "⚡ ";
+      color: var(--accent-yellow);
+    }
+
+    /* Cyber Badge List */
+    .badge-container {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .y2k-badge {
+      border: 1px solid var(--accent-cyan);
+      background: #000;
+      color: var(--accent-cyan);
+      font-size: 0.75rem;
+      padding: 3px 8px;
       font-weight: bold;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
+    }
+
+    /* Footer Styles */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.9);
+      color: #888;
+      font-size: 0.8rem;
+      border-top: 2px solid var(--accent-pink);
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: var(--accent-cyan);
     }
   </style>
 </head>
 <body class="dark">
 
-  <header>🎤 Aditya Rikhari – Fan FanPage!</header>
+  <div class="y2k-ticker">
+    <marquee scrollamount="6">★ WELCOME TO THE ADITYA RIKHARI CYBER ZONE ★ UPDATED FOR 2025/2026 ★ BEST VIEWED IN 800x600 ★</marquee>
+  </div>
+
+  <header>
+    <h1>✨ Aditya Rikhari ✨</h1>
+    <div class="subtitle">[ Ultimate FanStation & Multimedia Archive ]</div>
+  </header>
 
   <nav>
-    <button class="tab active" onclick="loadTab('about')">About</button>
-    <button class="tab" onclick="loadTab('music')">Music & Lyrics</button>
-    <button class="tab" onclick="loadTab('spotify')">Spotify</button>
-    <button class="tab" onclick="loadTab('media')">Media</button>
-    <button class="tab" onclick="loadTab('contact')">Contact</button>
-    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    <button class="tab active" onclick="loadTab('about')">📜 About</button>
+    <button class="tab" onclick="loadTab('music')">🎶 Lyrics</button>
+    <button class="tab" onclick="loadTab('spotify')">💿 Audio Stats</button>
+    <button class="tab" onclick="loadTab('media')">📺 Video Vault</button>
+    <button class="tab" onclick="loadTab('contact')">📡 Cyber Connect</button>
+    <button class="theme-toggle" onclick="toggleTheme()">⚙️ Theme Switch</button>
   </nav>
 
   <main id="content"></main>
 
- <footer>
-  © 2025 Fan Page • Made with 🎸 and ❤️<br>
-  Contents / Music from:
-  <a href="https://www.youtube.com/channel/UCf4rdDUfjjbx0UbGaeirODQ" target="_blank">Aditya Rikhari</a>,  
-  <a href="https://www.youtube.com/channel/UC4pXWqeKDSIWEvlLLTYWmXQ" target="_blank">Musical Waves</a>,  
-  <a href="https://youtube.com/@editsspixel?si=MrlBgmn1SekwP2G0" target="_blank">Pixel Edits</a>
-</footer>
-
+  <footer>
+    <div class="badge-container" style="justify-content: center; margin-bottom: 15px;">
+      <span class="y2k-badge">HTML 4.01 PASSED</span>
+      <span class="y2k-badge">CYBERSPACE APPROVED</span>
+      <span class="y2k-badge">MP3 READY</span>
+    </div>
+    © 2025 Fan Page • Made with 🎸 and ❤️<br>
+    Contents / Music courtesy of:
+    <a href="https://www.youtube.com/channel/UCf4rdDUfjjbx0UbGaeirODQ" target="_blank">Aditya Rikhari</a> |  
+    <a href="https://www.youtube.com/channel/UC4pXWqeKDSIWEvlLLTYWmXQ" target="_blank">Musical Waves</a> |  
+    <a href="https://youtube.com/@editsspixel?si=MrlBgmn1SekwP2G0" target="_blank">Pixel Edits</a>
+  </footer>
 
   <script>
     const content = document.getElementById('content');
 
     const tabs = {
       about: `
-        <h2>About Aditya Rikhari</h2>
-      
-<p><strong>Aditya Rikhari</strong> began singing and writing music while in school and college in Dehradun, later moving to Delhi to pursue his passion.</p>
-<p>His debut breakthrough came with his independently-released song <strong>“Faasle”</strong>. Early works like <em>Kya Karein</em> and <em>Tu Rehti Hai</em> helped him gain visibility. His first official music video, <em>Teri Yaad</em>, released in February 2023 under IndieA Records, featured Aditya on camera for the very first time. As he says: “this one is especially special for me as this is my first‑ever music video.”</p>
-<p>Aditya describes his songwriting as driven by intuition: “My process… is very intuitive and based on my instincts… If something clicks for me, I work in that direction and complete the song.” He composes, writes, and sings all his songs himself, giving him the freedom to experiment creatively.</p>
-<p>He stands out through simple, relatable lyrics and heartfelt tunes. “What sets me apart… are my lyrics and tune because they are very simple, relatable and easy to understand…”</p>
-<p>From ~100K monthly listeners at the start, he grew to 2.5–2.8 million listeners within a year. His songs like <em>Faasle</em> and <em>Samjho Na</em> have amassed over tens of millions of streams.</p>
-<p>Fans consistently describe his music as emotional therapy and deeply touching—many say his songs feel like someone is pouring their heart out, and “Teri Yaad is what got me addicted to his voice.”</p>
-
+        <h2>📜 About Aditya Rikhari</h2>
+        
+        <p><strong>Aditya Rikhari</strong> began singing and writing music while in school and college in Dehradun, later moving to Delhi to pursue his passion.</p>
+        <p>His debut breakthrough came with his independently-released song <strong>“Faasle”</strong>. Early works like <em>Kya Karein</em> and <em>Tu Rehti Hai</em> helped him gain visibility. His first official music video, <em>Teri Yaad</em>, released in February 2023 under IndieA Records, featured Aditya on camera for the very first time. As he says: “this one is especially special for me as this is my first‑ever music video.”</p>
+        <p>Aditya describes his songwriting as driven by intuition: “My process… is very intuitive and based on my instincts… If something clicks for me, I work in that direction and complete the song.” He composes, writes, and sings all his songs himself, giving him the freedom to experiment creatively.</p>
+        <p>He stands out through simple, relatable lyrics and heartfelt tunes. “What sets me apart… are my lyrics and tune because they are very simple, relatable and easy to understand…”</p>
+        <p>From ~100K monthly listeners at the start, he grew to 2.5–2.8 million listeners within a year. His songs like <em>Faasle</em> and <em>Samjho Na</em> have amassed over tens of millions of streams.</p>
+        <p>Fans consistently describe his music as emotional therapy and deeply touching—many say his songs feel like someone is pouring their heart out, and “Teri Yaad is what got me addicted to his voice.”</p>
       `,
       music: `
-        <h2>🎶 Songs & Lyrics</h2>
-        <h3>Faasle</h3>
+        <h2>🎶 Songs & Lyrics Archive</h2>
+        <h3>01. Faasle</h3>
         <blockquote>"Tere aur mere darmiyaan<br>Yeh Faasle kyun hai itna?"</blockquote>
-        <h3>Samjho Na</h3>
+        <h3>02. Samjho Na</h3>
         <blockquote>"Main jo keh na saka<br>Tu samjho na…"</blockquote>
-        <h3>Kol Aa</h3>
+        <h3>03. Kol Aa</h3>
         <blockquote>"Kol aa ve sajna,<br>Dil tenu labhda…"</blockquote>
-        <h3>Teri Yaad</h3>
+        <h3>04. Teri Yaad</h3>
         <blockquote>"Teri yaad aati hai, raaton mein…<br>Jaise koi baat adhoori si ho…"</blockquote>
       `,
       spotify: `
-        <h2>📊 Spotify Overview</h2>
+        <h2>💿 Spotify Cyber Overview</h2>
         <p><strong>Monthly Listeners:</strong> ~16 million</p>
-        <p><strong>Total Streams:</strong> 1+ billion</p>
+        <p><strong>Total Digital Streams:</strong> 1+ Billion</p>
+        <h3>Top Tracks:</h3>
         <ul>
-          <li>Samjho Na: 258M+</li>
-          <li>Faasle: 162M+</li>
-          <li>Jaana Samjho Na: 102M+</li>
-          <li>Paro: 83M+</li>
+          <li>Samjho Na — 258M+ Streams</li>
+          <li>Faasle — 162M+ Streams</li>
+          <li>Jaana Samjho Na — 102M+ Streams</li>
+          <li>Paro — 83M+ Streams</li>
         </ul>
         <iframe src="https://open.spotify.com/embed/artist/3ozYqVCLohfpXIhalkhM8D" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
       `,
       media: `
-        <h2>🎥 Music Videos</h2>
-        <h3>Faasle</h3>
+        <h2>📺 Video Vault</h2>
+        <h3>Faasle (Official Clip)</h3>
         <video controls>
           <source src="Faasle.mp4" type="video/mp4">
         </video>
-        <h3>Samjho Na </h3>
+        <h3>Samjho Na</h3>
         <video controls>
           <source src="Aditya Rikhari - SAMJHO NA.mp4" type="video/mp4">
         </video>
-        <h3>Teri Yaad</h3>
+        <h3>Teri Yaad (Lyrics Video)</h3>
         <video controls>
           <source src="TERI YAAD - ADITYA RIKHARI (Lyrics).mp4" type="video/mp4">
         </video>
       `,
       contact: `
-        <h2>📲 Connect with Aditya</h2>
+        <h2>📡 Cyber Connections</h2>
         <ul>
-          <li><a href="https://instagram.com/adityarikhari" target="_blank">Instagram</a></li>
-          <li><a href="https://www.youtube.com/channel/UCf4rdDUfjjbx0UbGaeirODQ" target="_blank">YouTube</a></li>
-          <li><a href="https://open.spotify.com/artist/3ozYqVCLohfpXIhalkhM8D" target="_blank">Spotify</a></li>
+          <li><a href="https://instagram.com/adityarikhari" target="_blank">Instagram Profile</a></li>
+          <li><a href="https://www.youtube.com/channel/UCf4rdDUfjjbx0UbGaeirODQ" target="_blank">YouTube Channel</a></li>
+          <li><a href="https://open.spotify.com/artist/3ozYqVCLohfpXIhalkhM8D" target="_blank">Spotify Artist Page</a></li>
         </ul>
-        <p>This site is made for fans, by fans. ❤️</p>
+        <p style="margin-top:20px; font-style:italic;">This fan site is maintained by cyber-fans, for cyber-fans. ❤️</p>
       `
     };
 
@@ -223,7 +341,7 @@ body.light {
       document.body.classList.toggle('light');
     }
 
-    // Load default
+    // Load default tab
     loadTab('about');
   </script>
 </body>
