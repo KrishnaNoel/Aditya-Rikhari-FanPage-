@@ -267,85 +267,82 @@
   </footer>
 
   <script>
-    const content = document.getElementById('content');
+  const content = document.getElementById('content');
 
-    const tabs = {
-      about: `
-        <h2>📜 About Aditya Rikhari</h2>
-        
-        <p><strong>Aditya Rikhari</strong> began singing and writing music while in school and college in Dehradun, later moving to Delhi to pursue his passion.</p>
-        <p>His debut breakthrough came with his independently-released song <strong>“Faasle”</strong>. Early works like <em>Kya Karein</em> and <em>Tu Rehti Hai</em> helped him gain visibility. His first official music video, <em>Teri Yaad</em>, released in February 2023 under IndieA Records, featured Aditya on camera for the very first time. As he says: “this one is especially special for me as this is my first‑ever music video.”</p>
-        <p>Aditya describes his songwriting as driven by intuition: “My process… is very intuitive and based on my instincts… If something clicks for me, I work in that direction and complete the song.” He composes, writes, and sings all his songs himself, giving him the freedom to experiment creatively.</p>
-        <p>He stands out through simple, relatable lyrics and heartfelt tunes. “What sets me apart… are my lyrics and tune because they are very simple, relatable and easy to understand…”</p>
-        <p>From ~100K monthly listeners at the start, he grew rapidly to multi-million stream milestones. Hits like <em>Sahiba</em>, <em>Samjho Na</em>, and <em>Paro</em> have accumulated hundreds of millions of streams worldwide.</p>
-        <p>Fans consistently describe his music as emotional therapy and deeply touching—many say his songs feel like someone is pouring their heart out, and “Teri Yaad is what got me addicted to his voice.”</p>
-      `,
-      music: `
-        <h2>🎶 Songs & Lyrics Archive</h2>
-        <h3>01. Sahiba</h3>
-        <blockquote>"Sahiba tu na meri ho saki..."</blockquote>
-        <h3>02. Samjho Na</h3>
-        <blockquote>"Main jo keh na saka<br>Tu samjho na…"</blockquote>
-        <h3>03. Paro</h3>
-        <blockquote>"Paro mere paas toh aao..."</blockquote>
-        <h3>04. Faasle</h3>
-        <blockquote>"Tere aur mere darmiyaan<br>Yeh Faasle kyun hai itna?"</blockquote>
-        <h3>05. Teri Yaad</h3>
-        <blockquote>"Teri yaad aati hai, raaton mein…<br>Jaise koi baat adhoori si ho…"</blockquote>
-      `,
-      spotify: `
-        <h2>💿 Spotify Cyber Overview</h2>
-        <p><strong>Monthly Listeners:</strong> ~15.5 Million</p>
-        <p><strong>Total Digital Streams:</strong> 2.4+ Billion</p>
-        <h3>TOP TRACKS:</h3>
-        <ul>
-          <li>Sahiba — 557M+ Streams</li>
-          <li>Samjho Na — 421M+ Streams</li>
-          <li>Paro — 259M+ Streams</li>
-          <li>Faasle — 204M+ Streams</li>
-          <li>Jaana Samjho Na — 180M+ Streams</li>
-        </ul>
-        <iframe src="https://open.spotify.com/embed/artist/3ozYqVCLohfpXIhalkhM8D" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-      `,
-      media: `
-        <h2>📺 Video Vault</h2>
-        <h3>Faasle (Official Clip)</h3>
-        <video controls>
-          <source src="Faasle.mp4" type="video/mp4">
-        </video>
-        <h3>Samjho Na</h3>
-        <video controls>
-          <source src="Aditya Rikhari - SAMJHO NA.mp4" type="video/mp4">
-        </video>
-        <h3>Teri Yaad (Lyrics Video)</h3>
-        <video controls>
-          <source src="TERI YAAD - ADITYA RIKHARI (Lyrics).mp4" type="video/mp4">
-        </video>
-      `,
-      contact: `
-        <h2>📡 Cyber Connections</h2>
-        <ul>
-          <li><a href="https://instagram.com/adityarikhari" target="_blank">Instagram Profile</a></li>
-          <li><a href="https://www.youtube.com/channel/UCf4rdDUfjjbx0UbGaeirODQ" target="_blank">YouTube Channel</a></li>
-          <li><a href="https://open.spotify.com/artist/3ozYqVCLohfpXIhalkhM8D" target="_blank">Spotify Artist Page</a></li>
-        </ul>
-        <p style="margin-top:20px; font-style:italic;">This fan site is maintained by cyber-fans, for cyber-fans. ❤️</p>
-      `
-    };
+  const tabs = {
+    about: `
+      <h2>📜 About Aditya Rikhari</h2>
+      <p><strong>Aditya Rikhari</strong> began singing and writing music while in school and college in Dehradun, later moving to Delhi to pursue his passion.</p>
+      <p>His debut breakthrough came with his independently-released song <strong>“Faasle”</strong>. Early works like <em>Kya Karein</em> and <em>Tu Rehti Hai</em> helped him gain visibility. His first official music video, <em>Teri Yaad</em>, released in February 2023 under IndieA Records, featured Aditya on camera for the very first time.</p>
+      <p>Aditya describes his songwriting as driven by intuition: “My process… is very intuitive and based on my instincts… If something clicks for me, I work in that direction and complete the song.”</p>
+      <p>From ~100K monthly listeners at the start, he grew rapidly to multi-million stream milestones. Hits like <em>Sahiba</em>, <em>Samjho Na</em>, and <em>Paro</em> have accumulated hundreds of millions of streams worldwide.</p>
+    `,
+    music: `
+      <h2>🎶 Songs & Lyrics Archive</h2>
+      <h3>01. Sahiba</h3>
+      <blockquote>"Sahiba tu na meri ho saki..."</blockquote>
+      <h3>02. Samjho Na</h3>
+      <blockquote>"Main jo keh na saka<br>Tu samjho na…"</blockquote>
+      <h3>03. Paro</h3>
+      <blockquote>"Paro mere paas toh aao..."</blockquote>
+      <h3>04. Faasle</h3>
+      <blockquote>"Tere aur mere darmiyaan<br>Yeh Faasle kyun hai itna?"</blockquote>
+      <h3>05. Teri Yaad</h3>
+      <blockquote>"Teri yaad aati hai, raaton mein…<br>Jaise koi baat adhoori si ho…"</blockquote>
+    `,
+    spotify: `
+      <h2>💿 Spotify Cyber Overview</h2>
+      <p><strong>Monthly Listeners:</strong> ~15.5 Million</p>
+      <p><strong>Total Digital Streams:</strong> 2.4+ Billion</p>
+      <h3>TOP TRACKS:</h3>
+      <ul>
+        <li>Sahiba — 760M+ Streams</li>
+        <li>Samjho Na — 420M+ Streams</li>
+        <li>Paro — 250M+ Streams</li>
+        <li>Faasle — 200M+ Streams</li>
+      </ul>
+      <iframe src="https://open.spotify.com/embed/artist/3ozYqVCLohfpXIhalkhM8D" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    `,
+    media: `
+      <h2>📺 Video Vault (Most Streamed YouTube Tracks)</h2>
+      
+      <h3>01. Sahiba (Official Video)</h3>
+      <iframe style="aspect-ratio: 16/9; width: 100%; border: 2px ridge var(--accent-pink);" src="https://www.youtube.com/embed/S_8qMeeI-H0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-    function loadTab(tabName) {
-      content.innerHTML = tabs[tabName];
-      document.querySelectorAll('nav button.tab').forEach(btn => btn.classList.remove('active'));
-      document.querySelector(`nav button[onclick="loadTab('${tabName}')"]`).classList.add('active');
-    }
+      <h3>02. Samjho Na (Nasamajh)</h3>
+      <iframe style="aspect-ratio: 16/9; width: 100%; border: 2px ridge var(--accent-pink);" src="https://www.youtube.com/embed/MhXCj8E9CZU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-      document.body.classList.toggle('light');
-    }
+      <h3>03. Paaro (Official Video)</h3>
+      <iframe style="aspect-ratio: 16/9; width: 100%; border: 2px ridge var(--accent-pink);" src="https://www.youtube.com/embed/7D5mS3q1W6I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-    // Load default tab
-    loadTab('about');
-  </script>
+      <h3>04. Faasle (Official Video)</h3>
+      <iframe style="aspect-ratio: 16/9; width: 100%; border: 2px ridge var(--accent-pink);" src="https://www.youtube.com/embed/3v8T-v0M9zU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    `,
+    contact: `
+      <h2>📡 Cyber Connections</h2>
+      <ul>
+        <li><a href="https://instagram.com/adityarikhari" target="_blank">Instagram Profile</a></li>
+        <li><a href="https://www.youtube.com/channel/UCf4rdDUfjjbx0UbGaeirODQ" target="_blank">YouTube Channel</a></li>
+        <li><a href="https://open.spotify.com/artist/3ozYqVCLohfpXIhalkhM8D" target="_blank">Spotify Artist Page</a></li>
+      </ul>
+      <p style="margin-top:20px; font-style:italic;">This fan site is maintained by cyber-fans, for cyber-fans. ❤️</p>
+    `
+  };
+
+  function loadTab(tabName) {
+    content.innerHTML = tabs[tabName];
+    document.querySelectorAll('nav button.tab').forEach(btn => btn.classList.remove('active'));
+    const activeBtn = document.querySelector(`nav button[onclick="loadTab('${tabName}')"]`);
+    if (activeBtn) activeBtn.classList.add('active');
+  }
+
+  function toggleTheme() {
+    document.body.classList.toggle('dark');
+    document.body.classList.toggle('light');
+  }
+
+  // Load default tab
+  loadTab('about');
+</script>
 </body>
 </html>
